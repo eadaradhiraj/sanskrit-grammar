@@ -1,4 +1,5 @@
 
+#pytest -v
 import declension
 import pytest
 
