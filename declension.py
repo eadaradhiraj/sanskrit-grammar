@@ -27,16 +27,16 @@ class subcls:
                 setattr(self, _k, kwargs[k])
         self.__initialized = True
 
-    def __getitem__(self, item) -> None:
+    def __getitem__(self, item: str) -> None:
         return getattr(self, item)
 
-    def __setattr__(self, name, value) -> None:
+    def __setattr__(self, name: str, value: str) -> None:
         if not self.__initialized:
             object.__setattr__(self, name, value)
         elif self.__initialized:
             warnings.warn("Assignment Disabled!")
 
-    def __setitem__(self, k, v) -> None:
+    def __setitem__(self, k: str, v: str) -> None:
         setattr(self, k, v)
 
     def __delitem__(self, _) -> None:
